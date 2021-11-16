@@ -7,26 +7,27 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "",
+      value: "",
 
     }
   }
   handleChange = (e)=>{
     this.setState({
-      text: e.target.value,
+      value: e.target.value,
     })
     
   }
   handleSubmit = (e) =>{
     e.preventDefault();
     this.setState({
-      text: this.state.value
+      value: this.state.value
     });
+    console.log("submit is working")
   
 
   }
   render() {
-    const {text} = this.state;
+    const {value} = this.state;
     return (
       <section className="bg-light">
         <header>
@@ -36,7 +37,7 @@ class App extends Component {
             </h1>
           </div>
         </header>
-        <form className="container mt-2">
+        <form onSubmit={this.handleSubmit} className="container mt-2">
           <section className="bg-light border border-light border-2 form-group">
             <h1>Personal Information</h1>
             <div>
@@ -45,7 +46,7 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="first name"
-                  value={text}
+                  value={value}
                   onChange={this.handleChange}
                 />
               </div>
@@ -169,8 +170,10 @@ class App extends Component {
             <div className="bg-dark text-light text-center p-2 m-2 rounded">
               Add
             </div>
-            <div onClick={this.handleSubmit} className="bg-success text-center p-2 m-2 rounded">
+            <div className="container ms-0">
+            <button type="submit" className="form-control bg-success text-center p-2  rounded">
               Generate PDF
+            </button>
             </div>
             <div className="bg-danger text-center p-2 m-2 rounded">
               Load Example
@@ -178,7 +181,7 @@ class App extends Component {
             <div className="bg-info text-center p-2 m-2 rounded">Reset</div>
           </section>
         </form>
-        <PersoInfo name={text}/>
+        <PersoInfo name={value}/>
       </section>
     );
   }

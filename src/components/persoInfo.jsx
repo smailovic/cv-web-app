@@ -7,10 +7,12 @@ class PersoInfo extends Component {
 
   }
   render(){
-    //up unttil now i made an error of controled components read on that later
-    //and fix this
+     
     return(
-      <h1>{this.props.text}</h1>
+      <div>
+              <h1 className="p-3 border bg-dark text-light container">{this.props.name}</h1>
+
+      </div>
     );
   }
 }
