@@ -1,15 +1,35 @@
 import React, { Component } from 'react';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PersoInfo from './components/persoInfo';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      text: "",
+
+    }
+  }
+  handleChange = (e)=>{
+    this.setState({
+      text: e.target.value,
+    })
+    
+  }
+  handleSubmit = (e) =>{
+    e.preventDefault();
+    this.setState({
+      text: this.state.value
+    });
+  
+
   }
   render() {
+    const {text} = this.state;
     return (
       <section className="bg-light">
-        <header className="">
+        <header>
           <div className="bg-dark p-5 ">
             <h1 className="text-warning text-center border-end border-start">
               CV Maker
@@ -19,12 +39,14 @@ class App extends Component {
         <form className="container mt-2">
           <section className="bg-light border border-light border-2 form-group">
             <h1>Personal Information</h1>
-            <div className="">
+            <div>
               <div className="m-2">
                 <input
                   className="form-control"
                   type="text"
                   placeholder="first name"
+                  value={text}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="m-2">
@@ -147,7 +169,7 @@ class App extends Component {
             <div className="bg-dark text-light text-center p-2 m-2 rounded">
               Add
             </div>
-            <div className="bg-success text-center p-2 m-2 rounded">
+            <div onClick={this.handleSubmit} className="bg-success text-center p-2 m-2 rounded">
               Generate PDF
             </div>
             <div className="bg-danger text-center p-2 m-2 rounded">
@@ -156,6 +178,7 @@ class App extends Component {
             <div className="bg-info text-center p-2 m-2 rounded">Reset</div>
           </section>
         </form>
+        <PersoInfo name={text}/>
       </section>
     );
   }
