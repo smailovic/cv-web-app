@@ -7,27 +7,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "",
-
-    }
+      personal: {
+        first: '',
+        last: '',
+      },
+    };
   }
-  handleChange = (e)=>{
+  handleChange = (e) => {
     this.setState({
-      value: e.target.value,
-    })
-    
-  }
-  handleSubmit = (e) =>{
+      personal: {
+        first: e.target.value,
+        last: e.target.value,
+      },
+    });
+  };
+  handleSubmit = (e) => {
     e.preventDefault();
     this.setState({
-      value: this.state.value
+      personal:  {
+        first:this.state.value,
+        last:,
+      }
     });
-    console.log("submit is working")
-  
-
-  }
+     console.log(this.state.personal.first);
+  };
   render() {
-    const {value} = this.state;
+    const { personal } = this.state;
     return (
       <section className="bg-light">
         <header>
@@ -46,7 +51,7 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="first name"
-                  value={value}
+                  value={personal.first}
                   onChange={this.handleChange}
                 />
               </div>
@@ -55,6 +60,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="last name"
+                  onChange ={this.handleChange}
+                  value={personal.last}
                 />
               </div>
               <div className="m-2">
@@ -171,9 +178,12 @@ class App extends Component {
               Add
             </div>
             <div className="container ms-0">
-            <button type="submit" className="form-control bg-success text-center p-2  rounded">
-              Generate PDF
-            </button>
+              <button
+                type="submit"
+                className="form-control bg-success text-center p-2  rounded"
+              >
+                Generate PDF
+              </button>
             </div>
             <div className="bg-danger text-center p-2 m-2 rounded">
               Load Example
@@ -181,7 +191,7 @@ class App extends Component {
             <div className="bg-info text-center p-2 m-2 rounded">Reset</div>
           </section>
         </form>
-        <PersoInfo name={value}/>
+        <PersoInfo personal={personal} />
       </section>
     );
   }

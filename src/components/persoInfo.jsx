@@ -10,7 +10,8 @@ class PersoInfo extends Component {
      
     return(
       <div>
-              <h1 className="p-3 border bg-dark text-light container">{this.props.name}</h1>
+              <h1 className="p-3 border bg-dark text-light container">{this.props.personal.first}</h1>
+
 
       </div>
     );
