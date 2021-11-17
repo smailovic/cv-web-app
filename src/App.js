@@ -17,11 +17,23 @@ class App extends Component {
         email: '',
         description: '',
       },
+      education : {
+        uni:'',city:'',degree:'',subject:'',from:0,to:0
+      },
+      experience : {
+        position:'',
+        company:'',
+        city:'',
+        from:'',
+        to:''
+      }
     };
   }
   handleChange = (e) => {
     this.setState({
       personal: { ...this.state.personal, [e.target.name]: e.target.value },
+      education: { ...this.state.education, [e.target.name]: e.target.value },
+      experience: { ...this.state.exper, [e.target.name]: e.target.value },
     });
     console.log(this.state.personal);
   };
@@ -139,72 +151,77 @@ class App extends Component {
             </div>
 
             <h1>Education</h1>
-            <div className="m-2">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="University name"
-              />
+            <div>
+              <div className="m-2">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="University name"
+                />
+              </div>
+              <div className="m-2">
+                <input className="form-control" type="text" placeholder="city" />
+              </div>
+              <div className="m-2">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Degree"
+                />
+              </div>
+              <div className="m-2">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="subject"
+                />
+              </div>
+              <div className="m-2">
+                <input className="form-control" type="text" placeholder="from" />
+              </div>
+              <div className="m-2">
+                <input className="form-control" type="text" placeholder="to" />
+              </div>
+              <div className="m-2 bg-dark text-light text-center p-2 mb-2 rounded">
+                delete
+              </div>
+              <div className="m-2 bg-dark text-light text-center p-2 rounded">
+                Add
+              </div>
             </div>
-            <div className="m-2">
-              <input className="form-control" type="text" placeholder="city" />
-            </div>
-            <div className="m-2">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Degree"
-              />
-            </div>
-            <div className="m-2">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="subject"
-              />
-            </div>
-            <div className="m-2">
-              <input className="form-control" type="text" placeholder="from" />
-            </div>
-            <div className="m-2">
-              <input className="form-control" type="text" placeholder="to" />
-            </div>
-            <div className="m-2 bg-dark text-light text-center p-2 mb-2 rounded">
-              delete
-            </div>
-            <div className="m-2 bg-dark text-light text-center p-2 rounded">
-              Add
-            </div>
+            
 
             <h1>Experience</h1>
-            <div className="m-2">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Postition"
-              />
-            </div>
-            <div className="m-2">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Company"
-              />
-            </div>
-            <div className="m-2">
-              <input className="form-control" type="text" placeholder="City" />
-            </div>
-            <div className="m-2">
-              <input className="form-control" type="text" placeholder="From" />
-            </div>
-            <div className="m-2">
-              <input className="form-control" type="text" placeholder="To" />
-            </div>
-            <div className="bg-dark text-light text-center p-2 m-2 rounded">
-              delete
-            </div>
-            <div className="bg-dark text-light text-center p-2 m-2 rounded">
-              Add
+            <div>
+                <div className="m-2">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Postition"
+                  />
+                </div>
+                <div className="m-2">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Company"
+                  />
+                </div>
+                <div className="m-2">
+                  <input className="form-control" type="text" placeholder="City" />
+                </div>
+                <div className="m-2">
+                  <input className="form-control" type="text" placeholder="From" />
+                </div>
+                <div className="m-2">
+                  <input className="form-control" type="text" placeholder="To" />
+                </div>
+                <div className="bg-dark text-light text-center p-2 m-2 rounded">
+                  delete
+                </div>
+                <div className="bg-dark text-light text-center p-2 m-2 rounded">
+                  Add
+                </div>
             </div>
             <div className="container ms-0">
               <button
