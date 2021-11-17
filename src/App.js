@@ -10,25 +10,35 @@ class App extends Component {
       personal: {
         first: '',
         last: '',
+        title: '',
+        photo: '',
+        adress: '',
+        phone: '',
+        email: '',
+        description: '',
       },
     };
   }
   handleChange = (e) => {
     this.setState({
-      
-      personal: {...this.state.personal, [e.target.name]:e.target.value}
+      personal: { ...this.state.personal, [e.target.name]: e.target.value },
     });
-    console.log(this.state.personal)
+    console.log(this.state.personal);
   };
   handleSubmit = (e) => {
-    const {personal} = this.state;
+    const { personal } = this.state;
     e.preventDefault();
     alert(`
     first name =${personal.first}
     last name = ${personal.last}
+    title = ${personal.title}
+    photo = ${personal.photo}
+    adress = ${personal.adress}
+    phone = ${personal.phone}
+    email = ${personal.email}
+    description = ${personal.description}
 
     `);
-    
   };
   render() {
     const { personal } = this.state;
@@ -60,7 +70,7 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="last name"
-                  onChange ={this.handleChange}
+                  onChange={this.handleChange}
                   value={personal.last}
                   name="last"
                 />
@@ -70,6 +80,9 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="title"
+                  value={personal.title}
+                  onChange={this.handleChange}
+                  name="title"
                 />
               </div>
               <div className="m-2">
@@ -77,6 +90,9 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="photo"
+                  value={personal.photo}
+                  onChange={this.handleChange}
+                  name="photo"
                 />
               </div>
               <div className="m-2">
@@ -84,6 +100,9 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="Adress"
+                  value={personal.adress}
+                  onChange={this.handleChange}
+                  name="adress"
                 />
               </div>
 
@@ -92,6 +111,9 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="Phone number"
+                  value={personal.phone}
+                  onChange={this.handleChange}
+                  name="phone"
                 />
               </div>
               <div className="m-2">
@@ -99,6 +121,9 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="Email"
+                  value={personal.email}
+                  onChange={this.handleChange}
+                  name="email"
                 />
               </div>
               <div className="m-2">
@@ -106,6 +131,9 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="Description"
+                  value={personal.description}
+                  onChange={this.handleChange}
+                  name="description"
                 />
               </div>
             </div>
