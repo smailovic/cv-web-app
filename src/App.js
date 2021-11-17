@@ -15,21 +15,20 @@ class App extends Component {
   }
   handleChange = (e) => {
     this.setState({
-      personal: {
-        first: e.target.value,
-        last: e.target.value,
-      },
+      
+      personal: {...this.state.personal, [e.target.name]:e.target.value}
     });
+    console.log(this.state.personal)
   };
   handleSubmit = (e) => {
+    const {personal} = this.state;
     e.preventDefault();
-    this.setState({
-      personal:  {
-        first:this.state.value,
-        last:,
-      }
-    });
-     console.log(this.state.personal.first);
+    alert(`
+    first name =${personal.first}
+    last name = ${personal.last}
+
+    `);
+    
   };
   render() {
     const { personal } = this.state;
@@ -53,6 +52,7 @@ class App extends Component {
                   placeholder="first name"
                   value={personal.first}
                   onChange={this.handleChange}
+                  name="first"
                 />
               </div>
               <div className="m-2">
@@ -62,6 +62,7 @@ class App extends Component {
                   placeholder="last name"
                   onChange ={this.handleChange}
                   value={personal.last}
+                  name="last"
                 />
               </div>
               <div className="m-2">
