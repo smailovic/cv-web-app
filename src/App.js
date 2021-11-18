@@ -17,16 +17,21 @@ class App extends Component {
         email: '',
         description: '',
       },
-      education : {
-        uni:'',city:'',degree:'',subject:'',from:0,to:0
+      education: {
+        uni: '',
+        city: '',
+        degree: '',
+        subject: '',
+        from: 0,
+        to: 0,
       },
-      experience : {
-        position:'',
-        company:'',
-        city:'',
-        from:'',
-        to:''
-      }
+      experience: {
+        position: '',
+        company: '',
+        city: '',
+        from: '',
+        to: '',
+      },
     };
   }
   handleChange = (e) => {
@@ -38,9 +43,11 @@ class App extends Component {
     console.log(this.state.personal);
   };
   handleSubmit = (e) => {
-    const { personal } = this.state;
+    const { personal, education, experience } = this.state;
+
     e.preventDefault();
     alert(`
+    Personal info
     first name =${personal.first}
     last name = ${personal.last}
     title = ${personal.title}
@@ -49,11 +56,27 @@ class App extends Component {
     phone = ${personal.phone}
     email = ${personal.email}
     description = ${personal.description}
+    ----------------------------
+    Education
+    university name = ${education.uni}
+    city = ${education.city}
+    degree = ${education.degree}
+    subject = ${education.subject}
+    from = ${education.from}
+    to = ${education.to}
+    -------------------
+    Experience
+    position = ${experience.position}
+    company = ${experience.company}
+    city = ${experience.city}
+    from = ${experience.from}
+    to = ${experience.to}
+    
 
     `);
   };
   render() {
-    const { personal } = this.state;
+    const { personal,education,experience } = this.state;
     return (
       <section className="bg-light">
         <header>
@@ -157,16 +180,29 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="University name"
+                  value = {education.uni}
+                  onChange ={this.handleChange}
+                  name="uni"
                 />
               </div>
               <div className="m-2">
-                <input className="form-control" type="text" placeholder="city" />
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="city"
+                  value = {education.city}
+                  onChange ={this.handleChange}
+                  name="city"
+                />
               </div>
               <div className="m-2">
                 <input
                   className="form-control"
                   type="text"
                   placeholder="Degree"
+                  value = {education.degree}
+                  onChange ={this.handleChange}
+                  name="degree"
                 />
               </div>
               <div className="m-2">
@@ -174,13 +210,24 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="subject"
+                  value = {education.subject}
+                  onChange ={this.handleChange}
+                  name="subject"
                 />
               </div>
               <div className="m-2">
-                <input className="form-control" type="text" placeholder="from" />
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="from"
+                  value = {education.from}
+                  onChange ={this.handleChange}
+                  name="from"
+                />
               </div>
               <div className="m-2">
-                <input className="form-control" type="text" placeholder="to" />
+                <input className="form-control" type="text" placeholder="to" value = {education.to}
+                  onChange ={this.handleChange}/>
               </div>
               <div className="m-2 bg-dark text-light text-center p-2 mb-2 rounded">
                 delete
@@ -189,39 +236,62 @@ class App extends Component {
                 Add
               </div>
             </div>
-            
 
             <h1>Experience</h1>
             <div>
-                <div className="m-2">
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder="Postition"
-                  />
-                </div>
-                <div className="m-2">
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder="Company"
-                  />
-                </div>
-                <div className="m-2">
-                  <input className="form-control" type="text" placeholder="City" />
-                </div>
-                <div className="m-2">
-                  <input className="form-control" type="text" placeholder="From" />
-                </div>
-                <div className="m-2">
-                  <input className="form-control" type="text" placeholder="To" />
-                </div>
-                <div className="bg-dark text-light text-center p-2 m-2 rounded">
-                  delete
-                </div>
-                <div className="bg-dark text-light text-center p-2 m-2 rounded">
-                  Add
-                </div>
+              <div className="m-2">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Postition"
+                  value = {experience.position}
+                  onChange ={this.handleChange}
+                  name="position"
+                />
+              </div>
+              <div className="m-2">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Company"
+                  value = {experience.company}
+                  onChange ={this.handleChange}
+                  name="company"
+                />
+              </div>
+              <div className="m-2">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="City"
+                  value = {experience.city}
+                  onChange ={this.handleChange}
+                  name="city"
+                />
+              </div>
+              <div className="m-2">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="From"
+                  value = {experience.from}
+                  onChange ={this.handleChange}
+                  name="from"
+                />
+              </div>
+              <div className="m-2">
+                <input className="form-control" type="text" placeholder="To" 
+                value = {experience.to}
+              
+                onChange ={this.handleChange}
+                name="to"/>
+              </div>
+              <div className="bg-dark text-light text-center p-2 m-2 rounded">
+                delete
+              </div>
+              <div className="bg-dark text-light text-center p-2 m-2 rounded">
+                Add
+              </div>
             </div>
             <div className="container ms-0">
               <button
