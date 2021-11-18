@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
+import $ from 'jquery';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PersoInfo from './components/persoInfo';
 
@@ -71,24 +73,26 @@ class App extends Component {
     city = ${experience.city}
     from = ${experience.from}
     to = ${experience.to}
+
     
 
     `);
   };
+ 
   render() {
-    const { personal,education,experience } = this.state;
+    const { personal, education, experience } = this.state;
     return (
       <section className="bg-light">
         <header>
           <div className="bg-dark p-5 ">
-            <h1 className="text-warning text-center border-end border-start">
+            <h1 i className="text-warning text-center border-end border-start">
               CV Maker
             </h1>
           </div>
         </header>
         <form onSubmit={this.handleSubmit} className="container mt-2">
           <section className="bg-light border border-light border-2 form-group">
-            <h1>Personal Information</h1>
+            <h1 id="app">Personal Information</h1>
             <div>
               <div className="m-2">
                 <input
@@ -180,8 +184,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="University name"
-                  value = {education.uni}
-                  onChange ={this.handleChange}
+                  value={education.uni}
+                  onChange={this.handleChange}
                   name="uni"
                 />
               </div>
@@ -190,8 +194,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="city"
-                  value = {education.city}
-                  onChange ={this.handleChange}
+                  value={education.city}
+                  onChange={this.handleChange}
                   name="city"
                 />
               </div>
@@ -200,8 +204,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="Degree"
-                  value = {education.degree}
-                  onChange ={this.handleChange}
+                  value={education.degree}
+                  onChange={this.handleChange}
                   name="degree"
                 />
               </div>
@@ -210,8 +214,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="subject"
-                  value = {education.subject}
-                  onChange ={this.handleChange}
+                  value={education.subject}
+                  onChange={this.handleChange}
                   name="subject"
                 />
               </div>
@@ -220,14 +224,19 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="from"
-                  value = {education.from}
-                  onChange ={this.handleChange}
+                  value={education.from}
+                  onChange={this.handleChange}
                   name="from"
                 />
               </div>
               <div className="m-2">
-                <input className="form-control" type="text" placeholder="to" value = {education.to}
-                  onChange ={this.handleChange}/>
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="to"
+                  value={education.to}
+                  onChange={this.handleChange}
+                />
               </div>
               <div className="m-2 bg-dark text-light text-center p-2 mb-2 rounded">
                 delete
@@ -244,8 +253,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="Postition"
-                  value = {experience.position}
-                  onChange ={this.handleChange}
+                  value={experience.position}
+                  onChange={this.handleChange}
                   name="position"
                 />
               </div>
@@ -254,8 +263,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="Company"
-                  value = {experience.company}
-                  onChange ={this.handleChange}
+                  value={experience.company}
+                  onChange={this.handleChange}
                   name="company"
                 />
               </div>
@@ -264,8 +273,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="City"
-                  value = {experience.city}
-                  onChange ={this.handleChange}
+                  value={experience.city}
+                  onChange={this.handleChange}
                   name="city"
                 />
               </div>
@@ -274,17 +283,20 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   placeholder="From"
-                  value = {experience.from}
-                  onChange ={this.handleChange}
+                  value={experience.from}
+                  onChange={this.handleChange}
                   name="from"
                 />
               </div>
               <div className="m-2">
-                <input className="form-control" type="text" placeholder="To" 
-                value = {experience.to}
-              
-                onChange ={this.handleChange}
-                name="to"/>
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="To"
+                  value={experience.to}
+                  onChange={this.handleChange}
+                  name="to"
+                />
               </div>
               <div className="bg-dark text-light text-center p-2 m-2 rounded">
                 delete
@@ -311,5 +323,6 @@ class App extends Component {
       </section>
     );
   }
+  
 }
 export default App;
