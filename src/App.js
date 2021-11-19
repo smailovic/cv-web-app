@@ -90,7 +90,12 @@ class App extends Component {
   addSection2() {
     $('#add2').click(() => $('#exp').show());
   }
-
+  loadexample() {
+    console.log(this);
+    /*personal = {
+    first : 'smael'
+  }*/
+  }
   render() {
     const { personal, education, experience } = this.state;
     return (
@@ -251,21 +256,21 @@ class App extends Component {
                 />
               </div>
             </div>
-           <div className="container">
-           <div
-              onClick={this.deleteSection}
-              className="del btn form-control  bg-dark text-light text-center p-2 mb-2 rounded"
-            >
-              delete
+            <div className="container">
+              <div
+                onClick={this.deleteSection}
+                className="del btn form-control  bg-dark text-light text-center p-2 mb-2 rounded"
+              >
+                delete
+              </div>
+              <div
+                id="add1"
+                onClick={this.addSection}
+                className=" bg-dark text-light text-center p-2 rounded"
+              >
+                Add
+              </div>
             </div>
-            <div
-              id="add1"
-              onClick={this.addSection}
-              className=" bg-dark text-light text-center p-2 rounded"
-            >
-              Add
-            </div>
-           </div>
 
             <div id="exp">
               <h1>Experience</h1>
@@ -319,10 +324,9 @@ class App extends Component {
                   name="to"
                 />
               </div>
-              
             </div>
             <div className="container">
-            <div
+              <div
                 onClick={this.deleteSectionTwo}
                 className="del2 bg-dark text-light text-center p-2 rounded mb-2"
               >
@@ -335,9 +339,8 @@ class App extends Component {
               >
                 Add
               </div>
-              
             </div>
-            
+
             <div className="container ms-0">
               <button
                 type="submit"
@@ -346,7 +349,10 @@ class App extends Component {
                 Generate PDF
               </button>
             </div>
-            <div className="bg-danger text-center p-2 m-2 rounded">
+            <div
+              onClick={this.loadexample}
+              className="bg-danger text-center p-2 m-2 rounded"
+            >
               Load Example
             </div>
             <div className="bg-info text-center p-2 m-2 rounded">Reset</div>
