@@ -78,7 +78,19 @@ class App extends Component {
 
     `);
   };
- 
+  deleteSection() {
+    $('.del').click(() => $('.edu').hide());
+  }
+  deleteSectionTwo() {
+    $('.del2').click(() => $('#exp').hide());
+  }
+  addSection() {
+    $('#add1').click(() => $('.edu').show());
+  }
+  addSection2() {
+    $('#add2').click(() => $('#exp').show());
+  }
+
   render() {
     const { personal, education, experience } = this.state;
     return (
@@ -177,8 +189,8 @@ class App extends Component {
               </div>
             </div>
 
-            <h1>Education</h1>
-            <div>
+            <div className="edu">
+              <h1>Education</h1>
               <div className="m-2">
                 <input
                   className="form-control"
@@ -238,16 +250,25 @@ class App extends Component {
                   onChange={this.handleChange}
                 />
               </div>
-              <div className="m-2 bg-dark text-light text-center p-2 mb-2 rounded">
-                delete
-              </div>
-              <div className="m-2 bg-dark text-light text-center p-2 rounded">
-                Add
-              </div>
             </div>
+           <div className="container">
+           <div
+              onClick={this.deleteSection}
+              className="del btn form-control  bg-dark text-light text-center p-2 mb-2 rounded"
+            >
+              delete
+            </div>
+            <div
+              id="add1"
+              onClick={this.addSection}
+              className=" bg-dark text-light text-center p-2 rounded"
+            >
+              Add
+            </div>
+           </div>
 
-            <h1>Experience</h1>
-            <div>
+            <div id="exp">
+              <h1>Experience</h1>
               <div className="m-2">
                 <input
                   className="form-control"
@@ -298,13 +319,25 @@ class App extends Component {
                   name="to"
                 />
               </div>
-              <div className="bg-dark text-light text-center p-2 m-2 rounded">
+              
+            </div>
+            <div className="container">
+            <div
+                onClick={this.deleteSectionTwo}
+                className="del2 bg-dark text-light text-center p-2 rounded mb-2"
+              >
                 delete
               </div>
-              <div className="bg-dark text-light text-center p-2 m-2 rounded">
+              <div
+                id="add2"
+                onClick={this.addSection2}
+                className="btn form-control bg-dark text-light text-center p-2  rounded  mb-3"
+              >
                 Add
               </div>
+              
             </div>
+            
             <div className="container ms-0">
               <button
                 type="submit"
@@ -323,6 +356,5 @@ class App extends Component {
       </section>
     );
   }
-  
 }
 export default App;
