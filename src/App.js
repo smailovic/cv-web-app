@@ -34,6 +34,7 @@ class App extends Component {
         from: '',
         to: '',
       },
+      
     };
   }
   handleChange = (e) => {
@@ -90,11 +91,35 @@ class App extends Component {
   addSection2() {
     $('#add2').click(() => $('#exp').show());
   }
-  loadexample() {
-    console.log(this);
-    /*personal = {
-    first : 'smael'
-  }*/
+  loadexample = () => {
+    //how do i do this?
+    const { personal, education, experience } = this.state;
+    this.setState({personal:{
+      first: "Smael",
+      last: 'Draoui',
+      title: 'Front-end Developer',
+      photo: ' i will change this later',
+      adress: 'IM SALMA AP15 ETAGE 3 AV SAMOUNI',
+      phone: '+212 648075134',
+      email: 'smaelcv@gmail.com',
+      description: 'i will change this to text area and style it',
+    },
+    education: {
+      uni: 'Moulay Smael university',
+      city: 'Meknes',
+      degree: 'liscence fondamentales en informatique',
+      subject: 'i dunno chnahya had subject',
+      from: 2018,
+      to: 2022,
+    },
+    experience: {
+      position: 'Front-end developer',
+      company: 'Freelance clients',
+      city: 'Meknes, Rabat, Tanger',
+      from: '2013',
+      to: '2018',
+    },
+    })
   }
   render() {
     const { personal, education, experience } = this.state;
