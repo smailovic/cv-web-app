@@ -9,9 +9,13 @@ class PersoInfo extends Component {
     const { personal } = this.props;
     return (
       <div>
-        <h1 className="p-3 border bg-dark text-light container">
-          {personal.first}
-        </h1>
+        <div className="p-3 border bg-dark text-light container">
+          <h1 className="text-warning">first name : {personal.first}</h1>
+          <h1 className="text-warning">last name : draoui</h1>
+          <h1 className="text-warning">title : software dev</h1>
+          <h1 className="text-warning">Adress : sdmflkqjsdf</h1>
+          <h1 className="text-warning">Email : smaelcv@gmail.com</h1>
+        </div>
       </div>
     );
   }

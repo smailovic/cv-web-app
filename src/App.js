@@ -24,8 +24,8 @@ class App extends Component {
         city: '',
         degree: '',
         subject: '',
-        from: 0,
-        to: 0,
+        from: '',
+        to: '',
       },
       experience: {
         position: '',
