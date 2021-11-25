@@ -49,35 +49,8 @@ class App extends Component {
     const { personal, education, experience } = this.state;
 
     e.preventDefault();
-    alert(`
-    Personal info
-    first name =${personal.first}
-    last name = ${personal.last}
-    title = ${personal.title}
-    photo = ${personal.photo}
-    adress = ${personal.adress}
-    phone = ${personal.phone}
-    email = ${personal.email}
-    description = ${personal.description}
-    ----------------------------
-    Education
-    university name = ${education.uni}
-    city = ${education.city}
-    degree = ${education.degree}
-    subject = ${education.subject}
-    from = ${education.from}
-    to = ${education.to}
-    -------------------
-    Experience
-    position = ${experience.position}
-    company = ${experience.company}
-    city = ${experience.city}
-    from = ${experience.from}
-    to = ${experience.to}
+   
 
-    
-
-    `);
   };
   deleteSection() {
     $('.del').click(() => $('.edu').hide());
@@ -167,10 +140,12 @@ class App extends Component {
                 />
               </div>
               <div className="m-2">
+                Image
                 <input
                   className="form-control"
-                  type="text"
+                  type="file"
                   placeholder="photo"
+                  accept="image/*"
                   value={personal.photo}
                   onChange={this.handleChange}
                   name="photo"

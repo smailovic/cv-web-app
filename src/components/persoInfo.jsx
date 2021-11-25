@@ -9,12 +9,27 @@ class PersoInfo extends Component {
     const { personal } = this.props;
     return (
       <div>
-        <div className="p-3 border bg-dark text-light container">
-          <h1 className="text-warning">first name : {personal.first}</h1>
-          <h1 className="text-warning">last name : draoui</h1>
-          <h1 className="text-warning">title : software dev</h1>
-          <h1 className="text-warning">Adress : sdmflkqjsdf</h1>
-          <h1 className="text-warning">Email : smaelcv@gmail.com</h1>
+        <div className="p-3 border bg-dark text-light">
+          <div className="bg-primary p-5 "></div>
+          <div className="bg-light d-flex justify-content-between">
+              <div className="text-dark">
+                <div>
+                <h3 className="border-bottom mb-3">Description</h3>
+                <div>mqlsdkfjqmlgkqhmldkqfmd qldkfjqm lsdkfjqmlsdkfjqmldskf j</div>
+                </div>
+                <h3 className="border-bottom text-dark mb-3">Experience</h3>
+                <h3 className="border-bottom text-dark mb-3">Education</h3>
+              </div>
+              <div className="bg-secondary">
+                <div className="p-4">img</div>
+                <div>personal details
+                 <div>adress</div>
+                 <div>phone number</div>
+                 <div>email</div>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
     );
