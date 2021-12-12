@@ -70,8 +70,8 @@ class App extends Component {
     this.setState({personal:{
       first: "Smael",
       last: 'Draoui',
-      title: 'Front-end Developer',
-      photo: ' i will change this later',
+      title: 'Front-end master',
+      photo: '',
       adress: 'IM SALMA AP15 ETAGE 3 AV SAMOUNI',
       phone: '+212 648075134',
       email: 'smaelcv@gmail.com',
@@ -146,7 +146,6 @@ class App extends Component {
                   type="file"
                   placeholder="photo"
                   accept="image/*"
-                  value={personal.photo}
                   onChange={this.handleChange}
                   name="photo"
                 />
@@ -358,7 +357,7 @@ class App extends Component {
             <div className="bg-info text-center p-2 m-2 rounded">Reset</div>
           </section>
         </form>
-        <PersoInfo personal={personal} />
+        <PersoInfo personal={personal} experience ={experience} education = {education} />
       </section>
     );
   }

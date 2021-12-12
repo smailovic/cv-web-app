@@ -6,7 +6,7 @@ class PersoInfo extends Component {
     super(props);
   }
   render() {
-    const { personal } = this.props;
+    const { personal,education, experience } = this.props;
     return (
       <div>
         <div className="p-3 border bg-dark text-light">
@@ -15,17 +15,30 @@ class PersoInfo extends Component {
               <div className="text-dark">
                 <div>
                 <h3 className="border-bottom mb-3">Description</h3>
-                <div>mqlsdkfjqmlgkqhmldkqfmd qldkfjqm lsdkfjqmlsdkfjqmldskf j</div>
+                <div>{personal.description}</div>
                 </div>
-                <h3 className="border-bottom text-dark mb-3">Experience</h3>
+                <h3 className="border-bottom text-dark mb-3">Experience
+                </h3>
+                <div>{experience.position}</div>
+                <div>{experience.company}</div>
+                <div>{experience.city}</div>
+                <div>{experience.from}</div>
+                <div>{experience.to }</div>
                 <h3 className="border-bottom text-dark mb-3">Education</h3>
+                <div>{education.uni}</div>
+                <div>{education.city}</div>
+                <div>{education.degree}</div>
+                <div>{education.subject}</div>
+                <div>{education.from }</div>
+                <div>{education.to}</div>
+
               </div>
               <div className="bg-secondary">
-                <div className="p-4">img</div>
-                <div>personal details
-                 <div>adress</div>
-                 <div>phone number</div>
-                 <div>email</div>
+                <div className="p-4">{personal.img}</div>
+                <div className="p-2"> personal details : {personal.first} {personal.last}
+                 <div>adress : {personal.adress}</div>
+                 <div>phone number: {personal.phone}</div>
+                 <div>email : {personal.email}</div>
               </div>
               
             </div>
